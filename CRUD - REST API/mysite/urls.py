@@ -21,5 +21,5 @@ from myapp.views import BookList,BookDetails
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/books',BookList.as_view()),
-    path('api/books/<int:pk>/',BookDetails.as_view())
+    path('api/books/<int:pk>/',BookDetails.as_view()),
 ]
