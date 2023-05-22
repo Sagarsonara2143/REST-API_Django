@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from myapp.views import SnippetCreate, SnippetDetails
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('create/',SnippetCreate.as_view()),
+    path('details/',SnippetDetails.as_view()),
 ]
