@@ -48,22 +48,3 @@ def snippet_detail(request, pk):
         return HttpResponse(status=204)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-def SnippetCreate(generics.ListCreateAPIView):
-	queryset=Snippet.objects.all()
-	serializer_class=SnippetSerializer
-
-def SnippetDetails(generics.RetrieveUpdateDestroyAPIView):
-	queryset=Snippet
-	serializer_class=SnippetSerializer
