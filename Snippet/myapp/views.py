@@ -8,7 +8,7 @@ from rest_framework import generics
 from .serializers import SnippetSerializer
 
 # Create your views here.
-@csrf_exempt
+@api_view(['GET','POST'])
 def snippet_list(request):
     if request.method == 'GET':
         snippet = Snippet.objects.all()
@@ -23,7 +23,7 @@ def snippet_list(request):
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
   
-@csrf_exempt
+@api_view(['GET','PUT','PATCH','DELETE'])
 def snippet_detail(request, pk):
     try:
         snippet = Snippet.objects.get(pk=pk)
